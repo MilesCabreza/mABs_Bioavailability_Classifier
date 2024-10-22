@@ -1,24 +1,26 @@
 """
 Final_Saved_Model
-pickle file located at: https://drive.google.com/file/d/1_aRAiDxZOIls1jrEh2Io8NZu13zqbkS4/view
+pickle file located at: https://drive.google.com/file/d/1I6kBVfRrTHGXJ2dG-swg5EX2C1XxB3vX/view?usp=sharing
 download and unpickle (see example below) to use
 """
 
 import pickle
 from torch import manual_seed, no_grad
 import numpy as np
+import esm.pretrained
 
 class Classifier:
 
     def create_inputs_ESM(self, heavy_seqs, light_seqs):
         manual_seed(42)
         np.random.seed(42)
-        model, alphabet = self.esm_model
+        model, alphabet = esm.pretrained.esm2_t33_650M_UR50D()
         batch_converter = alphabet.get_batch_converter()
 
         def seqs_to_numpy_array(seqs):
-            # Checks if the input is a list, if it is not it turns it into a list
-            if not isinstance(seqs, list):
+            # Checks if the input is a string, and if it is it turns it into a list
+            # allows for single inputs of sequences or multiples
+            if isinstance(seqs, str):
                 seqs = [seqs]
             batch_converter_input = []
             for seq in seqs:
@@ -75,7 +77,7 @@ class Classifier:
 
 # EXAMPLE USAGE
 
-# model_path = './Final_Saved_Model2.pkl'
+# model_path = './Final_Saved_Model.pkl'
 
 # with open(model_path, "rb") as file:
 #     Saved_Classifier = pickle.load(file)
@@ -89,8 +91,6 @@ class Classifier:
 # predictions = Saved_Classifier.run_clf(heavy_seqs, light_seqs)
 
 # from sklearn.metrics import accuracy_score
-
 # accuracy = accuracy_score(labels, predictions)
 # final_printout = f"Accuracy: {accuracy}"
 # print(final_printout)
-
