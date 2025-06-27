@@ -8,8 +8,6 @@ test_requirements.txt – Dependencies required for running the testing script.
 
 requirements.txt – Dependencies required for runnimg final model
 
-leveinstein_grouping.pynb  - Script that uses sequence data to calculate and apply a cluster grouping to each antibody.
+bioavailability_and_sequences.csv  - contains the proprietary name, INN, bioavailability. averaged bioavailability (used to turn ), high/low binary classification, development status, developer, heavy/light chains and their respective variable regions, and isotope information for every antibody within the dataset used.
 
-Bioavailability_sequences.csv  - contains the name of each antibody within the dataset and their corresponding light and heavy chain sequences.
-
-New_sequenced_clusters.csv - contains the dataset information of the Bioavailability_sequences.csv and the cluster number for each antibody.
+Bioavailability_Classifier_Stats.xlsx - contains results data obtained while testing
