@@ -71,7 +71,7 @@ model = joblib.load("SVC_Classifier.joblib")
 clf = Classifier(model)
 
 # Load input data
-df = pd.read_csv("bioavailability_and_sequences.csv")
+df = pd.read_csv("bioavailability-and-sequences.csv")
 heavy = df["Heavy_Var"]
 light = df["Light_Var"]
 labels = df["High/Low"]
