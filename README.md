@@ -1,8 +1,10 @@
 **Repository Structure**
 
-bioavailability_testing.py – Script for testing and saving the model trained on antibody sequences.
+testing_script.py – Script for testing and saving the model trained on antibody sequences.
 
-final_saved_model.py – Script containing the trained SGDClassifier/ESM model and loading functions.
+ESM-SVC_ModelScript.py – Script to run the SVC/ESM model
+
+SVC_Classifier.joblib - trained SVC model used when running ESM-SVC_ModelScript.py
 
 test_requirements.txt – Dependencies required for running the testing script.
 
